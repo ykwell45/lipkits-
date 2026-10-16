@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDIE — High Fashion Lip Architecture</title>
+  
+  <!-- Editorial Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Editorial Ticker Bar -->
+  <div class="ticker-bar">
+    <div class="ticker-content">
+      <span>COMPLIMENTARY SHIPPING WORLDWIDE</span>
+      <span class="dot">•</span>
+      <span>EDIE HIGH-PICTMENT ARCHITECTURE</span>
+      <span class="dot">•</span>
+      <span>9 COUTURE COMBINATIONS</span>
+      <span class="dot">•</span>
+      <span>LIMITED RUN</span>
+      <span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- Editorial Header Navigation -->
+  <header class="editorial-nav">
+    <div class="nav-wrapper">
+      <div class="nav-left">
+        <button class="nav-trigger" aria-label="Menu">
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <span class="nav-tagline">vol. 01 / collection</span>
+      </div>
+
+      <a href="#" class="brand-logo">EDIE</a>
+
+      <div class="nav-right">
+        <button class="icon-link" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <button class="icon-link cart-btn" id="cartTrigger" aria-label="Cart">
+          <span>BAG</span>
+          <span class="bag-count" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero / Avant-Garde Product Showcase -->
+  <main class="editorial-stage">
+    <div class="stage-grid">
+      
+      <!-- Visual Column (Asymmetric Frame) -->
+      <div class="visual-column">
+        <div class="editorial-tag">EDIE CUT-CREASE & LIP DYNAMICS</div>
+        
+        <div class="hero-frame">
+          <img id="mainImage" src="The Classic lip - 1.png" alt="Model Visual">
+          <div class="frame-decor">
+            <span class="corner-mark top-l">+</span>
+            <span class="corner-mark bottom-r">+</span>
+          </div>
+        </div>
+
+        <!-- Asymmetric Dual View Toggle -->
+        <div class="perspective-toggle">
+          <button class="persp-btn active" id="perspModel" onclick="switchPerspective('model')">
+            <div class="thumb-mini"><img id="thumbModelImg" src="The Classic lip - 1.png" alt="Model"></div>
+            <div class="persp-text">
+              <span class="label">LOOK</span>
+              <span class="sub">ON MODEL</span>
+            </div>
+          </button>
+
+          <button class="persp-btn" id="perspProduct" onclick="switchPerspective('product')">
+            <div class="thumb-mini"><img id="thumbProductImg" src="classic 2.jpeg" alt="Kit"></div>
+            <div class="persp-text">
+              <span class="label">OBJECT</span>
+              <span class="sub">LIP KIT</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Information & Control Column -->
+      <div class="control-column">
+        
+        <div class="title-block">
+          <div class="edition-num">N° 01 / 09</div>
+          <h1 class="shade-title" id="shadeTitle">The classic Lip</h1>
+          <p class="archetype-desc">High-contrast contour precision paired with reflective, non-sticky lip glaze.</p>
+        </div>
+
+        <!-- Editorial Swatch Selector Section -->
+        <div class="swatch-section">
+          <div class="swatch-info">
+            <span class="swatch-meta">SELECTED COMBINATION:</span>
+            <span class="swatch-name-display" id="shadeSubtitle">The classic Lip</span>
+          </div>
+
+          <!-- 9 Geometric Swatch Buttons -->
+          <div class="geometric-swatches" id="swatchesGrid">
+            <!-- Rendered via script.js -->
+          </div>
+
+          <!-- Fallback Editorial Selector -->
+          <div class="select-wrapper">
+            <select id="shadeSelector" onchange="selectShadeByIndex(this.value)">
+              <!-- Rendered via script.js -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Purchase & Bag Action -->
+        <div class="action-block">
+          <div class="qty-counter">
+            <button class="qty-step" onclick="adjustQty(-1)">−</button>
+            <span class="qty-number" id="qtyVal">1</span>
+            <button class="qty-step" onclick="adjustQty(1)">+</button>
+          </div>
+
+          <button class="editorial-bag-btn" onclick="addToCart()">
+            <span>ADD TO BAG</span>
+            <span class="btn-divider">|</span>
+            <span>$<span id="btnPrice">29</span></span>
+          </button>
+        </div>
+
+        <!-- Accordion Specifications -->
+        <div class="specs-accordion">
+          <details open>
+            <summary>
+              <span>SPECS & ARCHITECTURE</span>
+              <span class="acc-icon">+</span>
+            </summary>
+            <div class="acc-body">
+              <p><strong>LIP LINER:</strong> <span id="linerDetail">Brown lip liner</span></p>
+              <p><strong>GLOSS FORMULA:</strong> <span id="glossDetail">Pink gloss</span></p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>APPLICATION TECHNIQUE</span>
+              <span class="acc-icon">+</span>
+            </summary>
+            <div class="acc-body">
+              <p>Overline perimeter of lips using the high-pigment liner. Blend inwards slightly before filling the center with the signature high-shine gloss.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>INGREDIENTS & SUSTAINABILITY</span>
+              <span class="acc-icon">+</span>
+            </summary>
+            <div class="acc-body">
+              <p>Infused with Hyaluronic Acid micro-spheres and cold-pressed botanical oils. 100% Vegan and Cruelty-Free.</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Editorial Drawer Cart -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleCart(false)"></div>
+  <aside class="editorial-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h2>YOUR SELECTIONS (<span id="cartCountHeader">0</span>)</h2>
+      <button class="close-drawer" onclick="toggleCart(false)">✕</button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsList">
+      <div class="empty-msg">YOUR SELECTION IS EMPTY</div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="total-line">
+        <span>SUBTOTAL</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
